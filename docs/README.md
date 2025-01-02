@@ -12,10 +12,15 @@ WEB API omogoča osnovno funckionalnost zahtevkov. Zahtevki se shranjujejo v InM
   * Domenski sloj je v projektu TasksManagement.Domain. Vsebuje entiteto (objekt) z njegovimi parametri in vmesnike za CRUD metode.
   * Aplikacijski sloj je v projektu TasksManagement.Infrastructure. Vsebuje kontekst podatkovne baze v povezavi z EF, CRUD metode ter Nuget paket za EF InMemory bazo. ima referenco do domenskega sloja.
   * Infrastrukturni sloj je v projektu TasksManagement.Application. Vsebuje komande (dodajanje, spreminjanje, brisanje) in querije (poizvedbe) za CRUD metode ter Nuget paket MediatR za implementacijo vzorca mediator. Ima referenco do aplikacijskega sloja
-  * Predstavitveni sloj je v projektu TasksManagement.Api. Vsebuje kontrole (Get, Post, Put, Delete) in logiranje izjem. Ima Nuget pakete za ASP.NET Core, EF, za delo s kontajnerji, Swagger za testiranje API-ja ter Serilog za podporo logiranja. Ima referenco do infrasatrukturnega sloja ter aplikacijskega sloja.
+  * Predstavitveni sloj je v projektu TasksManagement.Api. Vsebuje kontrole (Get, Post, Put, Delete) in logiranje izjem. Ima Nuget pakete za ASP.NET Core, EF, Swagger za testiranje API-ja ter Serilog za podporo logiranja. Ima referenco do infrasatrukturnega sloja ter aplikacijskega sloja.
 
 
-2. Za logiranje se uporabvljajo klnjižnice Serilog.AspNetCore za podporo logiranja, Serilog.Sinks.File za pisanje logov v datoteko, Serilog.Settings.Configuration za kofiguriranje Seriloga ter Serilog.Extensions za možnost filtriranja nivojev logiranja. Aplikacija v dveh ločenih datotekah logira izjeme in zahtevke. Najrejena je tudi podpora za logiranje zahtevkov in odgovorov z Middleware, vendar je zaradi težav pri odgovoru v Swaggerju onemogočena.
+2. Za logiranje se uporabvljajo Nuget paketi
+  * Serilog.AspNetCore za podporo logiranja, 
+  * Serilog.Sinks.File za pisanje logov v datoteko, 
+  * Serilog.Settings.Configuration za kofiguriranje Seriloga ter 
+  * Serilog.Extensions za možnost filtriranja nivojev logiranja. 
+Aplikacija v dveh ločenih datotekah logira izjeme in zahtevke. Najrejena je tudi podpora za logiranje zahtevkov in odgovorov z Middleware, vendar je zaradi težav pri odgovoru v Swaggerju onemogočena.
 
 3. Relacije med posamezniki sloji so definirani z razredi DependencyInjection, ki so vključeni v aplikacijskem sloju. V aplikacijskem sloju so v razredu DependencyInjection vključeni tudi MeriatR servisi.
 
@@ -32,12 +37,12 @@ Ostale možnosti:
 
 # Struktura map in datotek
 V projektu so naslednje datoteke in mape:
-1. Docs: mapa z README.med
-2. Logs: kreira se po zagonu aplikacije
-3. TasksManagement.Api predstavitveni sloj aplikacije
-4. TasksManagement.Application: aplikacijsko sloj aplikacije
-5. TasksManagement.Domain: domenski sploj aplikacije
-6. TasksManagement.Infrastructure: infrastrukturni sloj aplikacije
+1. docs\: mapa z README.med
+2. logs\: kreira se po zagonu aplikacije
+3. src\TasksManagement.Api: predstavitveni sloj aplikacije
+4. src\TasksManagement.Application: aplikacijsko sloj aplikacije
+5. src\TasksManagement.Domain: domenski sploj aplikacije
+6. src\TasksManagement.Infrastructure: infrastrukturni sloj aplikacije
 7. TasksManagement.sln: solution datoteka za Microsoft Visual Studio
 
 
