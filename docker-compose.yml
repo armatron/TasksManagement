@@ -1,0 +1,13 @@
+version: '3.4'
+
+services:
+  tasksmanagement.api:
+    image: ${DOCKER_REGISTRY-}tasksmanagementapi
+    build:
+      context: .
+      dockerfile: src\TasksManagement.Api\Dockerfile
+    ports:
+      - "5001:8081" # Host port 5001 mapped to container port 8081
+    environment:
+      - ASPNETCORE_ENVIRONMENT=Development
+    
