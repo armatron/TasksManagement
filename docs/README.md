@@ -92,7 +92,7 @@ Zagon se izvede v dveh korakih: priprava docker image-a in zagon docker image-a:
     5. V Terminal vpišemo  "docker save -o publish/tasksmanagementapi.tar tasksmanagementapi:latest". S tem se na v mapo "publish" shrani docker image.
 
 2. Zagon docker image-a v Docker Desktop:
-    1. Datoteko publish/tasksmanagementapi.7z razpakiramo. Dobimo datoteko tasksmanegementapi.tar.
-    2. Za zagon iz Docker Desktop zaženemo "Comand Prompt". Z ukazon "cd" se pomaknemo na lokacijo datoteke "tasksmanegementapi.tar" ter poženemo "docker load -i tasksmanagementapi.tar". S tem se v Docker Deskop ustvari image "tasksmanagementapi" z oznako "latest".
-    3. Nato v Terminal vpišemo "docker-compose up". S tem se v Docker Desktop ustvari in zažene kontejner "tasksmanagement".
+    1. V mapi publish sta dve datoteki: tasksmanagementapi.7z.001 in tasksmanagementapi.7z.002. Datoteki razpakiramo in dobimo datoteko tasksmanegementapi.tar.
+    2. V Comand Prompt se z ukazon "cd" pomaknemo na lokacijo datoteke "tasksmanegementapi.tar" ter poženemo "docker load -i tasksmanagementapi.tar". S tem se v Docker Deskop ustvari image "tasksmanagementapi" z oznako "latest".
+    3. Nato v Command Prompt vpišemo "docker-compose up". S tem se v Docker Desktop ustvari in zažene kontejner "tasksmanagement".
     4. V brskalnik vpišemo: "https://localhost:5001/swagger/index.html" (port 5001 je definiran v decker-compose.yaml)
